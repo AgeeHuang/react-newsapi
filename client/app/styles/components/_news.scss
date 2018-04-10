@@ -38,10 +38,11 @@
     height: calc(100% - 200px);
     z-index: 1;
     position: relative;
+    padding: 0 10px;
     p {
       color: #31414d;
       transition: .3s;
-      margin: 0 10px;
+      width: 100%;
       &.news-title {
         font-size: 14px;
         font-family: sans-serif;
