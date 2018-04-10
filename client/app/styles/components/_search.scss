@@ -1,0 +1,102 @@
+$topHeadlines: #00bbe7;
+$everything: #8e1515;
+$sources: #34a853;
+
+@mixin input-shadow($clr) {
+  box-shadow: 1px 1px 0 darken($clr, 10%),
+    2px 2px 0 darken($clr, 10%),
+    3px 3px 0 darken($clr, 10%),
+    4px 4px 0 darken($clr, 10%),
+    5px 5px 0 darken($clr, 10%),
+    6px 6px 0 darken($clr, 10%),
+    7px 7px 0 darken($clr, 10%);
+}
+
+.billboard h2 {
+  font-size: 30px;
+  color: #fff;
+  margin: 15px 0;
+  border-bottom: 1px solid;
+}
+
+.search-field {
+  width: 70%;
+  max-width: 600px;
+  margin: 40px auto 20px;
+  .search-endpoints {
+    .topHeadlines {
+      background: $topHeadlines;
+    }
+    .everything {
+      background: $everything;
+    }
+    .sources {
+      background: $sources;
+    }
+    span {
+      font-size: 18px;
+      line-height: 25px;
+      padding: 10px;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+  }
+  .keyword-input {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    &.topHeadlines {
+      @include input-shadow($topHeadlines);
+      input[type=search] {
+        border: 7px solid $topHeadlines;
+      }
+      button {
+        background: $topHeadlines;
+      }
+    }
+    &.everything {
+      @include input-shadow($everything);
+      input[type=search] {
+        border: 7px solid $everything;
+      }
+      button {
+        background: $everything;
+      }
+    }
+    &.sources {
+      @include input-shadow($sources);
+      input[type=search] {
+        border: 7px solid $sources;
+      }
+      button {
+        background: $sources;
+      }
+    }
+    input, button {
+      outline: none;
+      font-size: 16px;
+    }
+    input[type=search] {
+      flex: 1;
+      height: 60px;
+      border-right: 0;
+      padding: 5px 10px;
+    }
+    button {
+      border: 0;
+      font-size: 25px;
+      padding: 0 15px;
+      color: #fefefe;
+      cursor: pointer;
+      transition: color .1s;
+      &:hover {
+        color: #002856;
+      }
+      &.disabled {
+        color: #777;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
+@import "./components/rwd";
+@import "./components/news";
+@import "./components/search";
+
+html {
+  font: 12px 'Montserrat Alternates';
+  box-sizing: border-box;
+}
+
+#root {
+  background: linear-gradient(45deg, rgb(129, 179, 170), rgb(32, 41, 58));
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.billboard {
+  width: 100vw;
+  max-width: 1000px;
+  padding: 0 1.5vw;
+}
+
+p {
+  color: green;
+}
+

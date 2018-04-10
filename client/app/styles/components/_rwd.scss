@@ -1,0 +1,43 @@
+
+$pc-media: 960px;
+$pcs-media: 959px;
+$pad-media: 760px;
+$pads-media: 759px;
+$phone-media: 480px;
+$phones-media: 479px;
+
+@mixin pc-width() {
+  @media all and (min-width: $pc-media) {
+    @content;
+  }
+}
+@mixin pad-width() {
+  @media all and (min-width: $pad-media) and (max-width: $pcs-media) {
+    @content;
+  }
+}
+@mixin small-pad-width() {
+  @media all and (min-width: $phone-media) and (max-width: $pads-media) {
+    @content;
+  }
+}
+@mixin phone-width() {
+  @media all and (max-width: $phones-media) {
+    @content;
+  }
+}
+
+@mixin responsive-grid-column($pc, $pad: $pc, $small-pad: $pad, $phone: $small-pad) {
+  @include pc-width {
+    grid-template-columns: $pc;
+  }
+  @include pad-width {
+    grid-template-columns: $pad;
+  }
+  @include small-pad-width {
+    grid-template-columns: $small-pad;
+  }
+  @include phone-width {
+    grid-template-columns: $phone;
+  }
+}
